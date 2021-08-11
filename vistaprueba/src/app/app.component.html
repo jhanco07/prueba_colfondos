@@ -1,0 +1,34 @@
+
+
+<div class="container py-5 text-center">
+  <h1 class="display-4 font-weight-bold">Prueba de conocimiento Colfondos</h1>  
+</div>
+
+
+<div class="form-container">
+  <form [formGroup]="checkoutForm">
+  <mat-form-field>
+    <input matInput type="email" placeholder="Cedula"  formControlName="cedula" id="cedula">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Tipo de documento"  formControlName="tipoDocumento" id="tipoDocumento">
+      <mat-option  *ngFor="let td of tiposDocumentos" value={{td.id}}>{{td.tipo}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <input matInput placeholder="Correo"  formControlName="correo" id="correo">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Celular"  formControlName="cedula"  formControlName="celular" id="celular">
+  </mat-form-field>
+  
+  <div style="text-align: center">
+    <button mat-button color="primary" [disabled]="!checkoutForm.valid" (click)="guardar()">Guardar</button>
+  </div>
+
+</form>
+</div>
